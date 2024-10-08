@@ -2,7 +2,7 @@ import { describe, expect, test } from 'vitest';
 
 describe('toBe', () => {
   test.fails('objects should not be strictly equal', () => {
-    expect({ a: 1 }).toBe({ a: 1 });
+    expect(1 + 2).toBe(1 + 3);
   });
 
   test.fails('arrays should be strictly equal', () => {
@@ -33,6 +33,8 @@ describe('toEqual', () => {
 
   test('functions should to be strictly equal if compared by reference', () => {
     const fn = () => {};
+    const fn2 = fn;
     expect(fn).toBe(fn);
+    expect(fn).toEqual(fn2);
   });
 });
